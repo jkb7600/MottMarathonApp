@@ -21,6 +21,8 @@
 		D0148BE11887555A0009514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BC31887555A0009514B /* UIKit.framework */; };
 		D0148BE91887555A0009514B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D0148BE71887555A0009514B /* InfoPlist.strings */; };
 		D0148BEB1887555A0009514B /* MottMarathonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BEA1887555A0009514B /* MottMarathonAppTests.m */; };
+		D0148BF6188755950009514B /* Lap.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF5188755950009514B /* Lap.m */; };
+		D0148BFA18875B4E0009514B /* Marathon.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF918875B4E0009514B /* Marathon.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		D0148BE61887555A0009514B /* MottMarathonAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MottMarathonAppTests-Info.plist"; sourceTree = "<group>"; };
 		D0148BE81887555A0009514B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D0148BEA1887555A0009514B /* MottMarathonAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MottMarathonAppTests.m; sourceTree = "<group>"; };
+		D0148BF4188755950009514B /* Lap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lap.h; path = Model/Lap.h; sourceTree = "<group>"; };
+		D0148BF5188755950009514B /* Lap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lap.m; path = Model/Lap.m; sourceTree = "<group>"; };
+		D0148BF818875B4E0009514B /* Marathon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Marathon.h; path = Model/Marathon.h; sourceTree = "<group>"; };
+		D0148BF918875B4E0009514B /* Marathon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Marathon.m; path = Model/Marathon.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,12 +118,11 @@
 		D0148BC51887555A0009514B /* MottMarathonApp */ = {
 			isa = PBXGroup;
 			children = (
-				D0148BCE1887555A0009514B /* AppDelegate.h */,
-				D0148BCF1887555A0009514B /* AppDelegate.m */,
 				D0148BD11887555A0009514B /* Main.storyboard */,
 				D0148BD41887555A0009514B /* ViewController.h */,
 				D0148BD51887555A0009514B /* ViewController.m */,
 				D0148BD71887555A0009514B /* Images.xcassets */,
+				D0148BF7188755A20009514B /* Model */,
 				D0148BC61887555A0009514B /* Supporting Files */,
 			);
 			path = MottMarathonApp;
@@ -126,6 +131,8 @@
 		D0148BC61887555A0009514B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0148BCE1887555A0009514B /* AppDelegate.h */,
+				D0148BCF1887555A0009514B /* AppDelegate.m */,
 				D0148BC71887555A0009514B /* MottMarathonApp-Info.plist */,
 				D0148BC81887555A0009514B /* InfoPlist.strings */,
 				D0148BCB1887555A0009514B /* main.m */,
@@ -150,6 +157,17 @@
 				D0148BE71887555A0009514B /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0148BF7188755A20009514B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0148BF4188755950009514B /* Lap.h */,
+				D0148BF5188755950009514B /* Lap.m */,
+				D0148BF818875B4E0009514B /* Marathon.h */,
+				D0148BF918875B4E0009514B /* Marathon.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0148BD61887555A0009514B /* ViewController.m in Sources */,
+				D0148BF6188755950009514B /* Lap.m in Sources */,
 				D0148BD01887555A0009514B /* AppDelegate.m in Sources */,
 				D0148BCC1887555A0009514B /* main.m in Sources */,
+				D0148BFA18875B4E0009514B /* Marathon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
