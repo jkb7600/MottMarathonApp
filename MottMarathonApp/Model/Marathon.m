@@ -32,5 +32,6 @@
 {
     Lap *lap = [[Lap alloc]initWithIntervalTime:intervalTime];
     [self.Laps addObject:lap];
+    NSLog(@"Lap added with time: %f",lap.timeAsDouble);
 }
 @end

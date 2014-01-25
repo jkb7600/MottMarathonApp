@@ -13,9 +13,19 @@
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) Marathon *marathon;
 @property (strong, nonatomic) NSTimer *timer;
+
+// Button outlets
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UIButton *stopButton;
+@property (weak, nonatomic) IBOutlet UIButton *clearButton;
+@property (weak, nonatomic) IBOutlet UIButton *lapButton;
 @end
 
 @implementation ViewController
+
+/*
+ Handle start stop start
+ */
 
 // Lazy marathon instantiation
 - (Marathon *)marathon
@@ -26,14 +36,63 @@
     return _marathon;
 }
 
+#pragma mark - Button Actions
+
 - (IBAction)startButtonPress:(id)sender {
+    [self toggleStartLap];
+    
+    if (self.stopButton.hidden) {
+        [self toggleStopClear];
+    }
+    
     self.timer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     [self.timer fire];
 }
 
 - (IBAction)stopButtonPress:(id)sender {
+    [self toggleStartLap];
+    [self toggleStopClear];
     [self.timer invalidate];
 }
+
+#define DEFAULT_TIMER_LABEL_TEXT @"00:00:00.00"
+
+- (IBAction)clearButtonPressed:(id)sender {
+    [self toggleStopClear];
+    
+#warning USER ALERT FOR CLEARING
+    [self.marathon clear];
+    self.timerLabel.text = DEFAULT_TIMER_LABEL_TEXT;
+}
+- (IBAction)lapButtonPressed:(id)sender {
+    [self.marathon addLapWithIntervalTime:[[NSDate date]timeIntervalSinceDate:self.marathon.startDate]];
+}
+
+#pragma mark - Button State Changes
+
+- (void)toggleStartLap
+{
+    if(self.lapButton.hidden){
+        self.startButton.hidden = YES;
+        self.lapButton.hidden = NO;
+    }else{
+        self.startButton.hidden = NO;
+        self.lapButton.hidden = YES;
+    }
+}
+
+- (void)toggleStopClear
+{
+    if (self.clearButton.hidden) {
+        self.stopButton.hidden = YES;
+        self.clearButton.hidden = NO;
+    }else{
+        self.clearButton.hidden = YES;
+        self.stopButton.hidden = NO;
+    }
+}
+
+#pragma mark - Timer Label Updating
 
 - (void)updateTimer
 {
