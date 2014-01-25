@@ -7,7 +7,7 @@
 //
 
 #import "Marathon.h"
-
+#import "Lap.h"
 @implementation Marathon
 
 -(NSMutableArray *)Laps
@@ -26,5 +26,11 @@
 {
     [self.Laps removeAllObjects];
     self.startDate = nil;
+}
+
+- (void)addLapWithIntervalTime:(double)intervalTime
+{
+    Lap *lap = [[Lap alloc]initWithIntervalTime:intervalTime];
+    [self.Laps addObject:lap];
 }
 @end
