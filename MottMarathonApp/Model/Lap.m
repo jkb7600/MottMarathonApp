@@ -9,18 +9,17 @@
 #import "Lap.h"
 
 @interface Lap()
-@property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *endDate;
 @property (strong, nonatomic, readwrite)NSString *timeAsString;
 @property (nonatomic, readwrite)double timeAsDouble;
 @end
 
 @implementation Lap
 
-- (instancetype)initWithIntervalTime:(double)intervalTime
+-(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime
 {
     self = [super init];
     if(self){
+        self.creationDate = creationDate;
         self.timeAsDouble = intervalTime;
     }
     return self;

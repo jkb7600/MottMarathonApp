@@ -11,7 +11,8 @@
 @interface Lap : NSObject
 @property (strong, nonatomic, readonly) NSString *timeAsString;
 @property (nonatomic, readonly) double timeAsDouble;
+@property (nonatomic, strong) NSDate *creationDate;
 
--(instancetype)initWithIntervalTime:(double)intervalTime;
+-(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime;
 
 @end

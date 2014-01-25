@@ -66,7 +66,8 @@
     self.timerLabel.text = DEFAULT_TIMER_LABEL_TEXT;
 }
 - (IBAction)lapButtonPressed:(id)sender {
-    [self.marathon addLapWithIntervalTime:[[NSDate date]timeIntervalSinceDate:self.marathon.startDate]];
+    //[self.marathon addLapWithIntervalTime:[[NSDate date]timeIntervalSinceDate:self.marathon.startDate]];
+    [self.marathon addLapWithDate:[NSDate date]];
 }
 
 #pragma mark - Button State Changes

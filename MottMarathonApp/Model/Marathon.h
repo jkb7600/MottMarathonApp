@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSMutableArray *Laps; //of Lap
 @property (strong, nonatomic) NSDate *startDate;
 
-- (void)addLapWithIntervalTime:(double)intervalTime;
+- (void)addLapWithDate:(NSDate *)currentDate;
 - (void)clear;
 @end

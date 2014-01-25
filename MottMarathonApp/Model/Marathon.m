@@ -8,6 +8,11 @@
 
 #import "Marathon.h"
 #import "Lap.h"
+
+@interface Marathon()
+@property (strong, nonatomic) NSDate *lastLapDate;
+@end
+
 @implementation Marathon
 
 -(NSMutableArray *)Laps
@@ -28,10 +33,22 @@
     self.startDate = nil;
 }
 
-- (void)addLapWithIntervalTime:(double)intervalTime
+- (void)addLapWithDate:(NSDate *)currentDate
 {
-    Lap *lap = [[Lap alloc]initWithIntervalTime:intervalTime];
+    Lap *lap;
+    //get time interval by using start date
+    if([self.Laps count] == 0){
+        //First Lap
+        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:self.startDate]];
+
+    }else{
+        //all other laps
+        Lap *lastLap = [self.Laps lastObject];
+        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:lastLap.creationDate]];
+        NSLog(@"NEW LAP");
+    }
+    
     [self.Laps addObject:lap];
-    NSLog(@"Lap added with time: %f",lap.timeAsDouble);
+    
 }
 @end
