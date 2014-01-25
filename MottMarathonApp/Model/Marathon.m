@@ -8,7 +8,6 @@
 
 #import "Marathon.h"
 
-
 @implementation Marathon
 
 -(NSMutableArray *)Laps
@@ -23,4 +22,9 @@
     return _startDate;
 }
 
+- (void)clear
+{
+    [self.Laps removeAllObjects];
+    self.startDate = nil;
+}
 @end
