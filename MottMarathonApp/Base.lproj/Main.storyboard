@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Zkk-lD-Wdl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--View Controller - Mott Marathon-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -29,10 +29,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p1M-e0-MIK">
                                 <rect key="frame" x="210" y="181" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="qh8-0Y-9MP"/>
-                                    <constraint firstAttribute="width" constant="90" id="x9b-8V-OnY"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,7 +41,8 @@
                                 <rect key="frame" x="20" y="181" width="90" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="Tdu-cC-33B"/>
+                                    <constraint firstAttribute="height" constant="30" id="IL4-3h-EXm"/>
+                                    <constraint firstAttribute="width" constant="90" id="YUT-WU-rUu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Stop">
@@ -58,9 +55,6 @@
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-bS-kzn">
                                 <rect key="frame" x="20" y="176" width="90" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="BKd-m3-KDm"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,11 +64,10 @@
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxm-IF-C5w">
-                                <rect key="frame" x="210" y="180" width="90" height="30"/>
+                                <rect key="frame" x="210" y="180" width="90" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="PNK-ol-mCX"/>
-                                    <constraint firstAttribute="height" constant="30" id="wz6-t1-ZBT"/>
+                                    <constraint firstAttribute="width" constant="90" id="90a-RT-OiN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Lap">
@@ -87,22 +80,27 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="JOI-om-KkV" firstAttribute="leading" secondItem="Kf1-MP-FXD" secondAttribute="leading" id="Auu-hk-WpM"/>
-                            <constraint firstItem="JOI-om-KkV" firstAttribute="bottom" secondItem="p1M-e0-MIK" secondAttribute="bottom" id="LJe-O9-IfU"/>
-                            <constraint firstItem="Cxm-IF-C5w" firstAttribute="leading" secondItem="p1M-e0-MIK" secondAttribute="leading" id="SRm-y8-fkV"/>
-                            <constraint firstItem="p1M-e0-MIK" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="52" id="Wkj-fE-puG"/>
-                            <constraint firstItem="JOI-om-KkV" firstAttribute="top" secondItem="p1M-e0-MIK" secondAttribute="top" id="ZSb-mT-PxQ"/>
-                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="p1M-e0-MIK" secondAttribute="baseline" id="abv-un-cZK"/>
-                            <constraint firstItem="fYb-bS-kzn" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="47" id="daC-by-3Sq"/>
-                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="Cxm-IF-C5w" secondAttribute="baseline" id="gCz-V3-Wjy"/>
-                            <constraint firstItem="p1M-e0-MIK" firstAttribute="trailing" secondItem="Kf1-MP-FXD" secondAttribute="trailing" id="jYT-rO-ROE"/>
-                            <constraint firstAttribute="centerX" secondItem="Kf1-MP-FXD" secondAttribute="centerX" id="oZD-BV-OqG"/>
-                            <constraint firstAttribute="trailing" secondItem="p1M-e0-MIK" secondAttribute="trailing" constant="20" symbolic="YES" id="oqI-fj-aY0"/>
-                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="JOI-om-KkV" secondAttribute="baseline" id="uIj-LG-8mD"/>
-                            <constraint firstItem="p1M-e0-MIK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="181" id="wTj-Eo-cxd"/>
-                            <constraint firstItem="fYb-bS-kzn" firstAttribute="leading" secondItem="JOI-om-KkV" secondAttribute="leading" id="xdV-Dc-cGK"/>
+                            <constraint firstItem="JOI-om-KkV" firstAttribute="trailing" secondItem="fYb-bS-kzn" secondAttribute="trailing" id="0r4-CM-lXB"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="47" id="2Rl-d0-RlM"/>
+                            <constraint firstItem="Kf1-MP-FXD" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" symbolic="YES" id="4kk-Ii-NKw"/>
+                            <constraint firstItem="p1M-e0-MIK" firstAttribute="bottom" secondItem="JOI-om-KkV" secondAttribute="bottom" id="6jr-UI-zJ5"/>
+                            <constraint firstItem="Er8-he-jB5" firstAttribute="top" secondItem="fYb-bS-kzn" secondAttribute="bottom" constant="353" id="A0U-rc-zg0"/>
+                            <constraint firstAttribute="trailing" secondItem="Kf1-MP-FXD" secondAttribute="trailing" constant="20" symbolic="YES" id="ADD-Sc-JXE"/>
+                            <constraint firstItem="JOI-om-KkV" firstAttribute="leading" secondItem="Kf1-MP-FXD" secondAttribute="leading" id="BT2-rv-xIg"/>
+                            <constraint firstItem="Kf1-MP-FXD" firstAttribute="top" secondItem="D3R-Cu-Nbr" secondAttribute="bottom" constant="6" id="HXd-Cv-01Q"/>
+                            <constraint firstItem="Cxm-IF-C5w" firstAttribute="trailing" secondItem="Kf1-MP-FXD" secondAttribute="trailing" id="HZ9-Qm-6Q5"/>
+                            <constraint firstItem="p1M-e0-MIK" firstAttribute="leading" secondItem="Cxm-IF-C5w" secondAttribute="leading" id="IVy-xP-JOB"/>
+                            <constraint firstItem="JOI-om-KkV" firstAttribute="baseline" secondItem="fYb-bS-kzn" secondAttribute="baseline" id="YZC-T3-YT4"/>
+                            <constraint firstItem="p1M-e0-MIK" firstAttribute="trailing" secondItem="Cxm-IF-C5w" secondAttribute="trailing" id="dVF-1Q-Kvb"/>
+                            <constraint firstItem="Cxm-IF-C5w" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="51" id="iAW-ip-Qbx"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="centerY" secondItem="Cxm-IF-C5w" secondAttribute="centerY" id="nKF-jL-yHE"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="p1M-e0-MIK" secondAttribute="baseline" id="rTm-Lb-45L"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="leading" secondItem="JOI-om-KkV" secondAttribute="leading" id="uCZ-C7-Pnr"/>
+                            <constraint firstItem="p1M-e0-MIK" firstAttribute="top" secondItem="JOI-om-KkV" secondAttribute="top" id="w69-Kh-pJd"/>
+                            <constraint firstItem="JOI-om-KkV" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="52" id="zvV-F3-8Ni"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Mott Marathon" id="U8J-wJ-J45"/>
                     <connections>
                         <outlet property="clearButton" destination="fYb-bS-kzn" id="y2j-f8-JI4"/>
                         <outlet property="lapButton" destination="Cxm-IF-C5w" id="sVK-aL-h34"/>
@@ -113,6 +111,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="738" y="31"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IXZ-fc-ma0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zkk-lD-Wdl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JDi-nd-OS3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="Qjq-jH-YFm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nCA-uG-Z0q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="251" y="31"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
