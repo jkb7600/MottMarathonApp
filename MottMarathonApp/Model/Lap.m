@@ -19,7 +19,7 @@
 
 - (instancetype)initWithIntervalTime:(double)intervalTime
 {
-    [self.super init];
+    self = [super init];
     if(self){
         self.timeAsDouble = intervalTime;
     }
