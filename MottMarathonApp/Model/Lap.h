@@ -12,6 +12,6 @@
 @property (strong, nonatomic, readonly) NSString *timeAsString;
 @property (nonatomic, readonly) double timeAsDouble;
 
--(instancetype)initWithStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate;
+-(instancetype)initWithIntervalTime:(double)intervalTime;
 
 @end

@@ -17,16 +17,15 @@
 
 @implementation Lap
 
--(instancetype)initWithStartDate:(NSDate *)startDate andEndDate:(NSDate *)endDate
+- (instancetype)initWithIntervalTime:(double)intervalTime
 {
-    self = [super init];
+    [self.super init];
     if(self){
-        self.startDate = startDate;
-        self.endDate = endDate;
+        self.timeAsDouble = intervalTime;
     }
     return self;
+    
 }
-
 -(NSString *)timeAsString
 {
     if(!_timeAsString){
@@ -63,15 +62,6 @@
         _timeAsString = [NSString stringWithFormat:@"%@:%@:%@",hoursString, minString, secString];
     }
     return _timeAsString;
-}
-
-- (double)timeAsDouble
-{
-    if(!_timeAsDouble){
-        _timeAsDouble = [self.endDate timeIntervalSinceDate:self.startDate];
-    }
-    
-    return _timeAsDouble;
 }
 
 @end
