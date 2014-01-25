@@ -52,25 +52,52 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="5j2-Q1-c6v"/>
+                                    <action selector="stopButtonPress:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y6a-uu-9Bn"/>
                                 </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYb-bS-kzn">
+                                <rect key="frame" x="20" y="176" width="90" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="BKd-m3-KDm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Clear">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxm-IF-C5w">
+                                <rect key="frame" x="210" y="180" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="PNK-ol-mCX"/>
+                                    <constraint firstAttribute="height" constant="30" id="wz6-t1-ZBT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="Lap">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JOI-om-KkV" firstAttribute="leading" secondItem="Kf1-MP-FXD" secondAttribute="leading" id="Auu-hk-WpM"/>
                             <constraint firstItem="JOI-om-KkV" firstAttribute="bottom" secondItem="p1M-e0-MIK" secondAttribute="bottom" id="LJe-O9-IfU"/>
+                            <constraint firstItem="Cxm-IF-C5w" firstAttribute="leading" secondItem="p1M-e0-MIK" secondAttribute="leading" id="SRm-y8-fkV"/>
                             <constraint firstItem="p1M-e0-MIK" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="52" id="Wkj-fE-puG"/>
                             <constraint firstItem="JOI-om-KkV" firstAttribute="top" secondItem="p1M-e0-MIK" secondAttribute="top" id="ZSb-mT-PxQ"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="p1M-e0-MIK" secondAttribute="baseline" id="abv-un-cZK"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="top" secondItem="Kf1-MP-FXD" secondAttribute="bottom" constant="47" id="daC-by-3Sq"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="Cxm-IF-C5w" secondAttribute="baseline" id="gCz-V3-Wjy"/>
                             <constraint firstItem="p1M-e0-MIK" firstAttribute="trailing" secondItem="Kf1-MP-FXD" secondAttribute="trailing" id="jYT-rO-ROE"/>
                             <constraint firstAttribute="centerX" secondItem="Kf1-MP-FXD" secondAttribute="centerX" id="oZD-BV-OqG"/>
                             <constraint firstAttribute="trailing" secondItem="p1M-e0-MIK" secondAttribute="trailing" constant="20" symbolic="YES" id="oqI-fj-aY0"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="baseline" secondItem="JOI-om-KkV" secondAttribute="baseline" id="uIj-LG-8mD"/>
                             <constraint firstItem="p1M-e0-MIK" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" constant="181" id="wTj-Eo-cxd"/>
+                            <constraint firstItem="fYb-bS-kzn" firstAttribute="leading" secondItem="JOI-om-KkV" secondAttribute="leading" id="xdV-Dc-cGK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="startLapButton" destination="p1M-e0-MIK" id="WDG-Gb-2vG"/>
-                        <outlet property="stopClearButton" destination="JOI-om-KkV" id="W6h-AL-reK"/>
                         <outlet property="timerLabel" destination="Kf1-MP-FXD" id="LRd-io-mLJ"/>
                     </connections>
                 </viewController>
