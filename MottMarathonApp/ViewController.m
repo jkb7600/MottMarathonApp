@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "Marathon.h"
+#import "LapsTableViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
@@ -133,4 +134,16 @@
         self.timerLabel.text = [NSString stringWithFormat:@"%@:%@:%@",hoursString, minString, secString];
     }
 }
-    @end
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"View Laps Segue"]){
+        if ([segue.destinationViewController isKindOfClass:[LapsTableViewController class]]) {
+            LapsTableViewController *ltvc = (LapsTableViewController *) segue.destinationViewController;
+            ltvc.laps = self.marathon.Laps;
+        }
+        
+    }
+}
+
+@end
