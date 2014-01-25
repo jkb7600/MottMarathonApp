@@ -12,4 +12,6 @@
 @interface Marathon : NSObject
 @property (strong, nonatomic) NSMutableArray *Laps; //of Lap
 @property (strong, nonatomic) NSDate *startDate;
+
+- (void)clear;
 @end
