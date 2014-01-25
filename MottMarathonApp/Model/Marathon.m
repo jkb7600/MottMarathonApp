@@ -17,4 +17,10 @@
     return _Laps;
 }
 
+-(NSDate *)startDate
+{
+    if(!_startDate){_startDate = [NSDate date];}
+    return _startDate;
+}
+
 @end
