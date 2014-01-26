@@ -13,6 +13,10 @@
 @property (strong, nonatomic) NSMutableArray *Laps; //of Lap
 @property (strong, nonatomic) NSDate *startDate;
 
+// Stats
+@property (strong, nonatomic) NSString *avgLapTimeAsString;
+@property (strong, nonatomic) NSString *estFinishTimeAsString;
+
 // Handle pausing
 @property (strong, nonatomic) NSDate *startPauseDate;
 @property (strong, nonatomic) NSDate *endPauseDate;

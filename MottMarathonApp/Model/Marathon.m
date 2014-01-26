@@ -11,6 +11,11 @@
 
 @interface Marathon()
 @property (strong, nonatomic) NSDate *lastLapDate;
+
+@property (nonatomic)double averageLapTimeAsFloat;
+@property (nonatomic)double estimatedFinishTimeAsDouble;
+@property (nonatomic)double timeElapsed;
+
 @end
 
 @implementation Marathon
@@ -31,11 +36,13 @@
 {
     [self.Laps removeAllObjects];
     self.startDate = nil;
+    self.timeElapsed = 0;
     
     //clear pause
     self.startPauseDate = nil;
     self.endPauseDate = nil;
     self.pauseTime = 0;
+    
 }
 
 - (void)addLapWithDate:(NSDate *)currentDate
@@ -53,8 +60,17 @@
     }
     
     [self.Laps addObject:lap];
+    [self calculateStats];
+    
+    if(!self.timeElapsed){
+        self.timeElapsed = lap.timeAsDouble;
+    }else{
+        self.timeElapsed += lap.timeAsDouble;
+    }
     
 }
+
+#pragma mark - Pause Handling
 
 - (void)startPauseTime
 {
@@ -77,5 +93,70 @@
     
     self.startPauseDate = nil;
     self.endPauseDate = nil;
+}
+
+#pragma mark - Stats
+
+- (void)calculateStats
+{
+    [self calculateAverageLapTime];
+    [self calculateEstimatedFinishTime];
+
+}
+
+- (void)calculateAverageLapTime
+{
+    double totalTime = 0;
+    
+    for(Lap *lap in self.Laps){
+        totalTime += lap.timeAsDouble;
+    }
+    float averageTime = totalTime / [self.Laps count];
+    
+    self.averageLapTimeAsFloat = averageTime;
+    self.avgLapTimeAsString = [self formatFloatTimeToOutputText:averageTime];
+}
+
+- (void)calculateEstimatedFinishTime
+{
+    int lapsRemaining = 105 - [self.Laps count];
+    float timeRemaining = lapsRemaining * self.averageLapTimeAsFloat;
+    
+    self.estFinishTimeAsString = [self formatFloatTimeToOutputText:timeRemaining];
+}
+
+
+
+- (NSString *)formatFloatTimeToOutputText:(float)time
+{
+    NSString *hoursString;
+    NSString *minString;
+    NSString *secString;
+    
+    double hours = floor(time/3600);
+    double min = floor(fmod((time/60), 60));
+    double sec = fmod(time, 60);
+   
+    
+    if (hours < 10) {
+        hoursString = [NSString stringWithFormat:@"0%g", hours];
+    }else{
+        hoursString = [NSString stringWithFormat:@"%g", hours];
+    }
+    
+    if(min < 10){
+        minString = [NSString stringWithFormat:@"0%g", min];
+    }else{
+        minString = [NSString stringWithFormat:@"%g", min];
+    }
+    
+    if(sec < 10){
+        secString = [NSString stringWithFormat:@"0%.2f", sec];
+    }else{
+        secString = [NSString stringWithFormat:@"%.2f",sec];
+    }
+    
+    //set ouput
+    return [NSString stringWithFormat:@"%@:%@:%@",hoursString, minString, secString];
 }
 @end

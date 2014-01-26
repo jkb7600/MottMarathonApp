@@ -21,6 +21,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
 
+// Stats outlets
+@property (weak, nonatomic) IBOutlet UILabel *lapCount;
+@property (weak, nonatomic) IBOutlet UILabel *previousLapTime;
+@property (weak, nonatomic) IBOutlet UILabel *averageLapTime;
+@property (weak, nonatomic) IBOutlet UILabel *estimatedFinishTime;
 @end
 
 @implementation ViewController
@@ -36,6 +41,11 @@
         _marathon = [[Marathon alloc] init];
     }
     return _marathon;
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [self updateStats];
 }
 
 #pragma mark - Button Actions
@@ -56,7 +66,11 @@
 }
 
 - (IBAction)stopButtonPress:(id)sender {
-    [self toggleStartLap];
+    
+    if (![self.timerLabel.text isEqualToString:@"00:00:00.00"]) {
+        [self toggleStartLap];
+    }
+    
     [self toggleStopClear];
     [self.timer invalidate];
     [self.marathon startPauseTime];
@@ -66,7 +80,7 @@
 
 - (IBAction)clearButtonPressed:(id)sender {
 
-    UIAlertView *cancelAlert = [[UIAlertView alloc] initWithTitle:@"Cancel" message:@"Are you sure you want to clear all data for this marathon?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay", nil];
+    UIAlertView *cancelAlert = [[UIAlertView alloc] initWithTitle:@"Cancel" message:@"Are you sure you want to clear all data for this marathon?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Yes", nil];
     
     [cancelAlert show];
     
@@ -76,15 +90,24 @@
 {
     if (buttonIndex == 1) {
         [self toggleStopClear];
+        [self showStartButton];
         [self.marathon clear];
         self.timerLabel.text = DEFAULT_TIMER_LABEL_TEXT;
+        [self updateStats];
     }
     
+}
+
+- (void)showStartButton
+{
+    self.startButton.hidden = NO;
+    self.lapButton.hidden = YES;
 }
 
 - (IBAction)lapButtonPressed:(id)sender {
     //[self.marathon addLapWithIntervalTime:[[NSDate date]timeIntervalSinceDate:self.marathon.startDate]];
     [self.marathon addLapWithDate:[NSDate date]];
+    [self updateStats];
 }
 
 #pragma mark - Button State Changes
@@ -156,6 +179,43 @@
     }
 }
 
+#pragma mark - Set Stats outlets
+- (void)updateStats
+{
+    if([self.marathon.Laps count] == 0){
+        [self updateLapCount];
+        self.previousLapTime.text = [NSString stringWithFormat:@"00:00:00.00"];
+        self.averageLapTime.text = [NSString stringWithFormat:@"--:--:--.--"];
+        self.estimatedFinishTime.text = [NSString stringWithFormat:@"--:--:--.--"];
+    }else{
+        [self updateLapCount];
+        [self updatePreviousLapTime];
+        [self updateAverageLapTime];
+        [self updateEstimatedFinishTime];
+    }
+}
+
+- (void)updateLapCount
+{
+    self.lapCount.text = [NSString stringWithFormat:@"%d", [self.marathon.Laps count]];
+}
+
+- (void)updatePreviousLapTime
+{
+    self.previousLapTime.text = [NSString stringWithFormat:@"%@",[[self.marathon.Laps lastObject] timeAsString]];
+}
+
+- (void)updateAverageLapTime
+{
+    self.averageLapTime.text = self.marathon.avgLapTimeAsString;
+}
+
+- (void)updateEstimatedFinishTime
+{
+    self.estimatedFinishTime.text = self.marathon.estFinishTimeAsString;
+}
+
+#pragma mark - Segue
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if([segue.identifier isEqualToString:@"View Laps Segue"]){
