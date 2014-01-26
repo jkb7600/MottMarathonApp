@@ -15,12 +15,12 @@
 
 @implementation Lap
 
--(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime
+-(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime andPauseTime:(double)pauseTime
 {
     self = [super init];
     if(self){
         self.creationDate = creationDate;
-        self.timeAsDouble = intervalTime;
+        self.timeAsDouble = intervalTime - pauseTime;
     }
     return self;
     

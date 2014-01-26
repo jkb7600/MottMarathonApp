@@ -13,6 +13,6 @@
 @property (nonatomic, readonly) double timeAsDouble;
 @property (nonatomic, strong) NSDate *creationDate;
 
--(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime;
+-(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime andPauseTime:(double)pauseTime;
 
 @end

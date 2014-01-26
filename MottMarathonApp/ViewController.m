@@ -20,12 +20,13 @@
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *clearButton;
 @property (weak, nonatomic) IBOutlet UIButton *lapButton;
+
 @end
 
 @implementation ViewController
 
 /*
- Handle start stop start
+ Handle start pausing
  */
 
 // Lazy marathon instantiation
@@ -48,12 +49,17 @@
     
     self.timer = [NSTimer scheduledTimerWithTimeInterval:.01 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
     [self.timer fire];
+    
+    if(self.marathon.startPauseDate){
+        [self.marathon endPauseTime];
+    }
 }
 
 - (IBAction)stopButtonPress:(id)sender {
     [self toggleStartLap];
     [self toggleStopClear];
     [self.timer invalidate];
+    [self.marathon startPauseTime];
 }
 
 #define DEFAULT_TIMER_LABEL_TEXT @"00:00:00.00"
@@ -104,6 +110,9 @@
 - (void)formatDoubleTimeInterval:(double)timeInterval
 {
     if (timeInterval > 0) {
+        
+        timeInterval -= self.marathon.pauseTime;
+        
         NSString *hoursString;
         NSString *minString;
         NSString *secString;

@@ -13,6 +13,14 @@
 @property (strong, nonatomic) NSMutableArray *Laps; //of Lap
 @property (strong, nonatomic) NSDate *startDate;
 
+// Handle pausing
+@property (strong, nonatomic) NSDate *startPauseDate;
+@property (strong, nonatomic) NSDate *endPauseDate;
+@property (nonatomic) double pauseTime;
+
 - (void)addLapWithDate:(NSDate *)currentDate;
 - (void)clear;
+- (void)startPauseTime;
+- (void)endPauseTime;
+
 @end
