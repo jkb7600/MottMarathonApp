@@ -10,7 +10,7 @@
 #import "Marathon.h"
 #import "LapsTableViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *timerLabel;
 @property (strong, nonatomic) Marathon *marathon;
 @property (strong, nonatomic) NSTimer *timer;
@@ -65,12 +65,23 @@
 #define DEFAULT_TIMER_LABEL_TEXT @"00:00:00.00"
 
 - (IBAction)clearButtonPressed:(id)sender {
-    [self toggleStopClear];
+
+    UIAlertView *cancelAlert = [[UIAlertView alloc] initWithTitle:@"Cancel" message:@"Are you sure you want to clear all data for this marathon?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Okay", nil];
     
-#warning USER ALERT FOR CLEARING
-    [self.marathon clear];
-    self.timerLabel.text = DEFAULT_TIMER_LABEL_TEXT;
+    [cancelAlert show];
+    
 }
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self toggleStopClear];
+        [self.marathon clear];
+        self.timerLabel.text = DEFAULT_TIMER_LABEL_TEXT;
+    }
+    
+}
+
 - (IBAction)lapButtonPressed:(id)sender {
     //[self.marathon addLapWithIntervalTime:[[NSDate date]timeIntervalSinceDate:self.marathon.startDate]];
     [self.marathon addLapWithDate:[NSDate date]];
