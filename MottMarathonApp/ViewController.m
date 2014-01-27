@@ -145,7 +145,7 @@
 {
     if (timeInterval > 0) {
         
-        timeInterval -= self.marathon.pauseTime;
+        timeInterval -= self.marathon.pauseTimeTotal;
         
         NSString *hoursString;
         NSString *minString;
@@ -197,7 +197,7 @@
 
 - (void)updateLapCount
 {
-    self.lapCount.text = [NSString stringWithFormat:@"%d", [self.marathon.Laps count]];
+    self.lapCount.text = [NSString stringWithFormat:@"%lu", (unsigned long)[self.marathon.Laps count]];
 }
 
 - (void)updatePreviousLapTime
