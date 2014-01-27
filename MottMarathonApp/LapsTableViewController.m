@@ -64,7 +64,7 @@
     // Configure the cell...
     Lap *lap = [self.laps objectAtIndex:indexPath.row];
     cell.textLabel.text = [NSString stringWithFormat:@"Lap %d", (int)indexPath.row +1];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",lap.timeAsString];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",lap.timeAsString];
     
     return cell;
 }
