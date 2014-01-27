@@ -63,8 +63,8 @@
     
     // Configure the cell...
     Lap *lap = [self.laps objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"%f",lap.timeAsDouble];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Lap %d", (int)indexPath.row +1];
+    cell.textLabel.text = [NSString stringWithFormat:@"Lap %d", (int)indexPath.row +1];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%f",lap.timeAsDouble];
     
     return cell;
 }
