@@ -15,6 +15,7 @@
 @property (nonatomic)double averageLapTimeAsFloat;
 @property (nonatomic)double estimatedFinishTimeAsDouble;
 @property (nonatomic)double timeElapsed;
+@property (nonatomic)double tempPauseTime; // For lap correction after a pause
 
 @end
 
@@ -41,7 +42,8 @@
     //clear pause
     self.startPauseDate = nil;
     self.endPauseDate = nil;
-    self.pauseTime = 0;
+    self.pauseTimeTotal = 0;
+    self.tempPauseTime = 0;
     
 }
 
@@ -50,13 +52,15 @@
     Lap *lap;
     //get time interval by using start date
     if([self.Laps count] == 0){
-        //First Lap
-        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:self.startDate]andPauseTime:self.pauseTime];
+        //First Lap include pause time
+        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:self.startDate]andPauseTime:self.pauseTimeTotal];
 
     }else{
         //all other laps
         Lap *lastLap = [self.Laps lastObject];
-        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:lastLap.creationDate] andPauseTime:self.pauseTime];
+        lap = [[Lap alloc] initWithDate:currentDate andTime:[currentDate timeIntervalSinceDate:lastLap.creationDate] andPauseTime:self.tempPauseTime];
+        self.tempPauseTime = 0;
+
     }
     
     [self.Laps addObject:lap];
@@ -85,10 +89,11 @@
 
 - (void)addPauseIntervalTime
 {
-    if(!self.pauseTime){
-        self.pauseTime = [self.endPauseDate timeIntervalSinceDate:self.startPauseDate];
+    self.tempPauseTime = [self.endPauseDate timeIntervalSinceDate:self.startPauseDate];
+    if(!self.pauseTimeTotal){
+        self.pauseTimeTotal = self.tempPauseTime;
     }else{
-        self.pauseTime += [self.endPauseDate timeIntervalSinceDate:self.startPauseDate];
+        self.pauseTimeTotal += self.tempPauseTime;
     }
     
     self.startPauseDate = nil;
@@ -119,7 +124,7 @@
 
 - (void)calculateEstimatedFinishTime
 {
-    int lapsRemaining = 105 - [self.Laps count];
+    int lapsRemaining = 105 - (int)[self.Laps count];
     float timeRemaining = lapsRemaining * self.averageLapTimeAsFloat;
     
     self.estFinishTimeAsString = [self formatFloatTimeToOutputText:timeRemaining];

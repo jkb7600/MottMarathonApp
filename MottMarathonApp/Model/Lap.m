@@ -15,6 +15,13 @@
 
 @implementation Lap
 
+-(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime
+{
+    self = [self initWithDate:creationDate andTime:intervalTime andPauseTime:0];
+    return self;
+}
+
+// for after pause
 -(instancetype)initWithDate:(NSDate *)creationDate andTime:(double)intervalTime andPauseTime:(double)pauseTime
 {
     self = [super init];

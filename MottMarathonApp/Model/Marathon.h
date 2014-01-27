@@ -20,7 +20,7 @@
 // Handle pausing
 @property (strong, nonatomic) NSDate *startPauseDate;
 @property (strong, nonatomic) NSDate *endPauseDate;
-@property (nonatomic) double pauseTime;
+@property (nonatomic) double pauseTimeTotal;
 
 - (void)addLapWithDate:(NSDate *)currentDate;
 - (void)clear;
