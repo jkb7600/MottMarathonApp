@@ -44,7 +44,6 @@
         double hours = floor(time/3600);
         double min = floor(fmod((time/60), 60));
         double sec = fmod(time, 60);
-        //sec = ceil(sec);
         
         if (hours < 10) {
             hoursString = [NSString stringWithFormat:@"0%g", hours];
