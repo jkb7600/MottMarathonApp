@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB01B6AA189997DA0064B62A /* LapsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01B6A9189997DA0064B62A /* LapsTableViewController.m */; };
 		D0148BC01887555A0009514B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BBF1887555A0009514B /* Foundation.framework */; };
 		D0148BC21887555A0009514B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BC11887555A0009514B /* CoreGraphics.framework */; };
 		D0148BC41887555A0009514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BC31887555A0009514B /* UIKit.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AB01B6A8189997DA0064B62A /* LapsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapsTableViewController.h; sourceTree = "<group>"; };
+		AB01B6A9189997DA0064B62A /* LapsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapsTableViewController.m; sourceTree = "<group>"; };
 		D0148BBC1887555A0009514B /* MottMarathonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MottMarathonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0148BBF1887555A0009514B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0148BC11887555A0009514B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 				D0148BD11887555A0009514B /* Main.storyboard */,
 				D0148BD41887555A0009514B /* ViewController.h */,
 				D0148BD51887555A0009514B /* ViewController.m */,
+				AB01B6A8189997DA0064B62A /* LapsTableViewController.h */,
+				AB01B6A9189997DA0064B62A /* LapsTableViewController.m */,
 				D0148BD71887555A0009514B /* Images.xcassets */,
 				D0148BF7188755A20009514B /* Model */,
 				D0148BC61887555A0009514B /* Supporting Files */,
@@ -270,6 +275,7 @@
 				D0148BD61887555A0009514B /* ViewController.m in Sources */,
 				D0148BF6188755950009514B /* Lap.m in Sources */,
 				D0148BD01887555A0009514B /* AppDelegate.m in Sources */,
+				AB01B6AA189997DA0064B62A /* LapsTableViewController.m in Sources */,
 				D0148BCC1887555A0009514B /* main.m in Sources */,
 				D0148BFA18875B4E0009514B /* Marathon.m in Sources */,
 			);
@@ -480,6 +486,7 @@
 				D0148BF01887555A0009514B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0148BF11887555A0009514B /* Build configuration list for PBXNativeTarget "MottMarathonAppTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				D0148BF31887555A0009514B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
