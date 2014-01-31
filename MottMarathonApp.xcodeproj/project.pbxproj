@@ -23,6 +23,7 @@
 		D0148BEB1887555A0009514B /* MottMarathonAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BEA1887555A0009514B /* MottMarathonAppTests.m */; };
 		D0148BF6188755950009514B /* Lap.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF5188755950009514B /* Lap.m */; };
 		D0148BFA18875B4E0009514B /* Marathon.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF918875B4E0009514B /* Marathon.m */; };
+		D053D5151893815900754EC3 /* LapsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D053D5141893815900754EC3 /* LapsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		D0148BF5188755950009514B /* Lap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Lap.m; path = Model/Lap.m; sourceTree = "<group>"; };
 		D0148BF818875B4E0009514B /* Marathon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Marathon.h; path = Model/Marathon.h; sourceTree = "<group>"; };
 		D0148BF918875B4E0009514B /* Marathon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Marathon.m; path = Model/Marathon.m; sourceTree = "<group>"; };
+		D053D5131893815900754EC3 /* LapsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapsTableViewController.h; sourceTree = "<group>"; };
+		D053D5141893815900754EC3 /* LapsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 			isa = PBXGroup;
 			children = (
 				D0148BD11887555A0009514B /* Main.storyboard */,
+				D053D5131893815900754EC3 /* LapsTableViewController.h */,
+				D053D5141893815900754EC3 /* LapsTableViewController.m */,
 				D0148BD41887555A0009514B /* ViewController.h */,
 				D0148BD51887555A0009514B /* ViewController.m */,
 				D0148BD71887555A0009514B /* Images.xcassets */,
@@ -270,6 +275,7 @@
 				D0148BD61887555A0009514B /* ViewController.m in Sources */,
 				D0148BF6188755950009514B /* Lap.m in Sources */,
 				D0148BD01887555A0009514B /* AppDelegate.m in Sources */,
+				D053D5151893815900754EC3 /* LapsTableViewController.m in Sources */,
 				D0148BCC1887555A0009514B /* main.m in Sources */,
 				D0148BFA18875B4E0009514B /* Marathon.m in Sources */,
 			);
@@ -480,6 +486,7 @@
 				D0148BF01887555A0009514B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0148BF11887555A0009514B /* Build configuration list for PBXNativeTarget "MottMarathonAppTests" */ = {
 			isa = XCConfigurationList;
@@ -488,6 +495,7 @@
 				D0148BF31887555A0009514B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
