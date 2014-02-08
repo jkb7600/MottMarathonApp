@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AB01B6AA189997DA0064B62A /* LapsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB01B6A9189997DA0064B62A /* LapsTableViewController.m */; };
 		D0148BC01887555A0009514B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BBF1887555A0009514B /* Foundation.framework */; };
 		D0148BC21887555A0009514B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BC11887555A0009514B /* CoreGraphics.framework */; };
 		D0148BC41887555A0009514B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0148BC31887555A0009514B /* UIKit.framework */; };
@@ -25,6 +24,7 @@
 		D0148BF6188755950009514B /* Lap.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF5188755950009514B /* Lap.m */; };
 		D0148BFA18875B4E0009514B /* Marathon.m in Sources */ = {isa = PBXBuildFile; fileRef = D0148BF918875B4E0009514B /* Marathon.m */; };
 		D053D5151893815900754EC3 /* LapsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D053D5141893815900754EC3 /* LapsTableViewController.m */; };
+		D09D2CA618A6D36D00143840 /* lapViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D09D2CA518A6D36D00143840 /* lapViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +65,8 @@
 		D0148BF918875B4E0009514B /* Marathon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Marathon.m; path = Model/Marathon.m; sourceTree = "<group>"; };
 		D053D5131893815900754EC3 /* LapsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LapsTableViewController.h; sourceTree = "<group>"; };
 		D053D5141893815900754EC3 /* LapsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LapsTableViewController.m; sourceTree = "<group>"; };
+		D09D2CA418A6D36D00143840 /* lapViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapViewCell.h; sourceTree = "<group>"; };
+		D09D2CA518A6D36D00143840 /* lapViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = lapViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,8 @@
 				D0148BD51887555A0009514B /* ViewController.m */,
 				AB01B6A8189997DA0064B62A /* LapsTableViewController.h */,
 				AB01B6A9189997DA0064B62A /* LapsTableViewController.m */,
+				D09D2CA418A6D36D00143840 /* lapViewCell.h */,
+				D09D2CA518A6D36D00143840 /* lapViewCell.m */,
 				D0148BD71887555A0009514B /* Images.xcassets */,
 				D0148BF7188755A20009514B /* Model */,
 				D0148BC61887555A0009514B /* Supporting Files */,
@@ -277,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D09D2CA618A6D36D00143840 /* lapViewCell.m in Sources */,
 				D0148BD61887555A0009514B /* ViewController.m in Sources */,
 				D0148BF6188755950009514B /* Lap.m in Sources */,
 				D0148BD01887555A0009514B /* AppDelegate.m in Sources */,

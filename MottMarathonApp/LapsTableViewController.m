@@ -8,6 +8,7 @@
 
 #import "LapsTableViewController.h"
 #import "Lap.h"
+#import "lapViewCell.h"
 
 @interface LapsTableViewController ()
 @end
@@ -53,20 +54,33 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [self.laps count];
+    return ([self.laps count] * 2);
 }
-
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (!(indexPath.row % 2)) {
+		return 60;
+	} else {
+		return 10;
+	}
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Lap Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if((indexPath.row %2)){
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"InvisibleCellID" forIndexPath:indexPath];
+        cell.opaque = 0;
+        return cell;
+    }else{
+        static NSString *CellIdentifier = @"Lap Cell";
+        //UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        lapViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        // Configure the cell...
+        NSIndexPath *index = [NSIndexPath indexPathForRow:indexPath.row/2 inSection:indexPath.section];
+        Lap *lap = [self.laps objectAtIndex:index.row];
+        cell.lapCount.text = [NSString stringWithFormat:@"%ld", index.row +1];
+        cell.lapTime.text = [NSString stringWithFormat:@"%@",lap.timeAsString];
+        return cell;
+    }
     
-    // Configure the cell...
-    Lap *lap = [self.laps objectAtIndex:indexPath.row];
-    cell.textLabel.text = [NSString stringWithFormat:@"Lap %d", (int)indexPath.row +1];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",lap.timeAsString];
-    
-    return cell;
 }
 
 
