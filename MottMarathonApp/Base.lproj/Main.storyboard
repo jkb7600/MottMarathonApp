@@ -215,7 +215,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="9"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Lap Cell" rowHeight="60" id="1fB-FU-cbP" customClass="lapViewCell">
                                 <rect key="frame" x="0.0" y="96" width="320" height="60"/>
